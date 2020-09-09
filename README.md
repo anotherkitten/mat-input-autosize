@@ -1,24 +1,33 @@
 # MatInputAutosize
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+[![NPM](https://nodei.co/npm/mat-input-autosize.png?compact=true)](https://nodei.co/npm/mat-input-autosize/)  
+mat-input-autosize is an Angular directive that allows Material input elements to fit the width of their contents.  
 
-## Code scaffolding
+## Details
 
-Run `ng generate component component-name --project mat-input-autosize` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mat-input-autosize`.
-> Note: Don't forget to add `--project mat-input-autosize` or else it will be added to the default project in your `angular.json` file. 
+This directive uses CSS styles to resize a matInput element dynamically. It removes the hard coded width from the matInput, and adds an invisible text element to set the width.
 
-## Build
+## Usage  
 
-Run `ng build mat-input-autosize` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Import the module with: `import { MatInputAutosizeModule } from 'mat-input-autosize'`.  
+* Add `MatInputAutosizeModule` to your NgModule's imports array.  
+* Apply the directive `matInputAutosize` to your <input> element that has a `matInput` directive on it.  
 
-## Publishing
+## Configuration  
 
-After building your library with `ng build mat-input-autosize`, go to the dist folder `cd dist/mat-input-autosize` and run `npm publish`.
+The `matInputAutosize` directive has three optional inputs, which all take CSS styles:  
+* `matInputAutosizeMinWidth` - Sets the minimum width the input will shrink to. (default: 120px)  
+* `matInputAutosizeMaxWidth` - Sets the maximum width the input will grow to.  
+* `matInputAutosizeFontStyle` - If the automatic width is incorrect, pass the computed `font` style of the input box to fix it.  
 
-## Running unit tests
+## Config Example  
 
-Run `ng test mat-input-autosize` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<input matInput
+       matInputAutosize
+       matInputAutosizeMinWidth='80px'
+       matInputAutosizeMaxWidth='160px'
+       matInputAutosizeFontStyle='12px Roboto, sans-serif'>
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
