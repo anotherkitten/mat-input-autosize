@@ -2,10 +2,7 @@
   "extends": "../../tslint.json",
   "rules": {
     "directive-selector": [
-      true,
-      "attribute",
-      "lib",
-      "camelCase"
+      false
     ],
     "component-selector": [
       true,
